@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import SliceHeroImage from './slices/SliceHeroImage'
+import SliceInfosIcons from './slices/SliceInfosIcons'
 
 const Slices = ({ slices }) =>
   slices.map(slice => {
@@ -9,7 +10,7 @@ const Slices = ({ slices }) =>
       case 'PrismicHomepageBodyHeroImage':
         return <SliceHeroImage slice={slice} />
       case 'PrismicHomepageBodyBlocIcon':
-        return true
+        return <SliceInfosIcons slice={slice} />
       default:
         return true
     }
