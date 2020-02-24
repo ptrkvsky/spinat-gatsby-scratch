@@ -1,10 +1,13 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Img from 'gatsby-image'
-import BackgroundImage from 'gatsby-background-image'
+
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+
+import Slices from '../components/Slices'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -12,50 +15,51 @@ const IndexPage = ({ data }) => (
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <BackgroundImage
-      Tag="section"
-      fluid={
-        data.prismicHomepage.data.body[0].primary.hero_image1.localFile
-          .childImageSharp.fluid
-      }
-      backgroundColor="#040e18"
-    >
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.prismicHomepage.data.body[0].primary.title_hero.html,
-        }}
-      />
-      <p>{data.prismicHomepage.data.body[0].primary.button_text}</p>
-      <p>{data.prismicHomepage.data.body[0].primary.button_link.slug}</p>
-      <h2>gatsby-background-image</h2>
-    </BackgroundImage>
+    <Slices slices={data.prismicHomepage.data.body} />
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export const pageQuery = graphql`
   query IndexQuery {
     prismicHomepage {
       data {
         body {
-          primary {
-            title_hero {
-              html
-              text
-            }
-            button_link {
-              url
-              target
-            }
-            button_text
-            hero_image1 {
-              localFile {
-                childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
+          ... on PrismicHomepageBodyHeroImage {
+            primary {
+              title_hero {
+                html
+                text
+              }
+              button_link {
+                url
+                target
+              }
+              hero_image1 {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
                   }
                 }
               }
+            }
+          }
+          ... on PrismicHomepageBodyBlocIcon {
+            id
+            items {
+              bloc_title {
+                html
+              }
+              short_description {
+                html
+              }
+              icon_class
             }
           }
         }
