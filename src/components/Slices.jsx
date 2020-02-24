@@ -8,9 +8,9 @@ const Slices = ({ slices }) =>
   slices.map(slice => {
     switch (slice.__typename) {
       case 'PrismicHomepageBodyHeroImage':
-        return <SliceHeroImage slice={slice} />
+        return <SliceHeroImage key={slice.id} slice={slice} />
       case 'PrismicHomepageBodyBlocIcon':
-        return <SliceInfosIcons slice={slice} />
+        return <SliceInfosIcons key={slice.id} slice={slice} />
       default:
         return true
     }

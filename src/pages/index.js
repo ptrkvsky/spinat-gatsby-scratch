@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-
-import Img from 'gatsby-image'
-
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -15,7 +12,7 @@ const IndexPage = ({ data }) => (
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <Slices slices={data.prismicHomepage.data.body} />
+    <Slices key={data.id} slices={data.prismicHomepage.data.body} />
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )

@@ -20,7 +20,7 @@ const SliceHeroImage = ({ slice }) => (
 )
 
 SliceHeroImage.propTypes = {
-  slice: PropTypes.any,
+  slice: PropTypes.object.isRequired,
 }
 
 export default SliceHeroImage

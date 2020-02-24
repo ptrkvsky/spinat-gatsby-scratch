@@ -1,26 +1,27 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import BackgroundImage from 'gatsby-background-image'
 
-const SliceHeroImage = ({ slice }) => (
-  <BackgroundImage
-    Tag="section"
-    fluid={slice.primary.hero_image1.localFile.childImageSharp.fluid}
-    backgroundColor="#040e18"
-  >
-    <div
-      dangerouslySetInnerHTML={{
-        __html: slice.primary.title_hero.html,
-      }}
-    />
-    <p>{slice.primary.button_text}</p>
-    <p>{slice.primary.button_link.slug}</p>
-    <h2>gatsby-background-image</h2>
-  </BackgroundImage>
-)
+const SliceHeroImage = ({ slice }) =>
+  slice.items.map(item => (
+    <div>
+      {item.icon_class}
+      <div
+        className="bloc-shortdesc"
+        dangerouslySetInnerHTML={{
+          __html: item.short_description.html,
+        }}
+      />
+      <div
+        className="bloc-title"
+        dangerouslySetInnerHTML={{
+          __html: item.bloc_title.html,
+        }}
+      />
+    </div>
+  ))
 
 SliceHeroImage.propTypes = {
-  slice: PropTypes.any,
+  slice: PropTypes.object.isRequired,
 }
 
 export default SliceHeroImage
