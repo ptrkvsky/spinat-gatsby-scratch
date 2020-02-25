@@ -22,7 +22,7 @@ IndexPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query IndexQuery24 {
     prismicHomepage {
       data {
         body {
@@ -57,6 +57,17 @@ export const pageQuery = graphql`
                 html
               }
               icon_class
+            }
+          }
+        }
+      }
+    }
+    prismicProjects {
+      data {
+        body {
+          primary {
+            label {
+              html
             }
           }
         }
