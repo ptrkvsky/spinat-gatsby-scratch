@@ -1,7 +1,6 @@
 require('dotenv').config({
   path: `.env`,
-});
-
+})
 
 module.exports = {
   siteMetadata: {
@@ -10,6 +9,7 @@ module.exports = {
     author: `@kovskyD`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -22,7 +22,7 @@ module.exports = {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'spinat',
-        accessToken: `${process.env.API_KEY}`,
+        accessToken: `MC5Ya19xelJFQUFDVUFncVRC.fl7vv73vv70TJ10uYnw-XWkG77-977-9T--_vW5HWkvvv71F77-9Tj7vv73vv73vv717BA`,
         // Get the correct URLs in blog posts
         linkResolver: () => post => `/${post.uid}`,
       },
