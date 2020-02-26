@@ -4,6 +4,12 @@ const SectionHeroImage = styled('section')`
   display: block;
   position: relative;
 
+  h1 {
+    font-size: 78px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
   .illu {
     position: absolute !important;
     top: 0;

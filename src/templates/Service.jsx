@@ -1,10 +1,10 @@
 import React from 'react';
 import Layout from '../components/Layout';
 
-const Project = () => (
+const Service = () => (
   <div>
-    <Layout>Project</Layout>
+    <Layout>Service</Layout>
   </div>
 );
 
-export default Project;
+export default Service;

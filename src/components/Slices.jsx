@@ -3,6 +3,7 @@ import React from 'react';
 
 import SliceHeroImage from './slices/SliceHeroImage';
 import SliceInfosIcons from './slices/SliceInfosIcons';
+import SliceServicesContainer from './slices/SliceServicesContainer';
 
 const Slices = ({ slices }) =>
   slices.map(slice => {
@@ -11,6 +12,8 @@ const Slices = ({ slices }) =>
         return <SliceHeroImage key={slice.id} slice={slice} />;
       case 'PrismicHomepageBodyBlocIcon':
         return <SliceInfosIcons key={slice.id} slice={slice} />;
+      case 'PrismicHomepageBodyServices':
+        return <SliceServicesContainer key={slice.id} slice={slice} />;
       default:
         return true;
     }
