@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import SEO from '../components/seo';
 
-import Slices from '../components/Slices'
+import Slices from '../components/Slices';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -15,11 +15,11 @@ const IndexPage = ({ data }) => (
     <Slices key={data.id} slices={data.prismicHomepage.data.body} />
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
-)
+);
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
 export const pageQuery = graphql`
   query IndexQuery24 {
@@ -74,6 +74,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default IndexPage
+export default IndexPage;
