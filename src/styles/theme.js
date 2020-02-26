@@ -10,7 +10,7 @@ const theme = {
     primary: "'Poppins', serif",
     secondary: "'Roboto Condensed', serif",
   },
-  maxWidth: '1240px',
+  maxWidth: '1260px',
 };
 
 export default theme;
