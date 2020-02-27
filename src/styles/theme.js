@@ -10,6 +10,10 @@ const theme = {
     primary: "'Poppins', serif",
     secondary: "'Roboto Condensed', serif",
   },
+  fontSize: {
+    button: '16px',
+  },
+
   maxWidth: '1260px',
 };
 

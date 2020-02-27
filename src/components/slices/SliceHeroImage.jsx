@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Link from 'gatsby';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { SectionHeroImage } from '../../styles/slices/HeroImage';
+import { ButtonPrimary } from '../../styles/buttons/buttonPrimary';
 
 const SliceHeroImage = ({ slice }) => (
   <SectionHeroImage>
@@ -15,8 +16,9 @@ const SliceHeroImage = ({ slice }) => (
         __html: slice.primary.title_hero.html,
       }}
     />
-    buton url : {slice.primary.button_link.url}
-    button link: {slice.primary.button_text}
+    <Link css={ButtonPrimary} to="/home/">
+      test
+    </Link>
   </SectionHeroImage>
 );
 
