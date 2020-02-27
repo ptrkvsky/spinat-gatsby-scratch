@@ -28,8 +28,8 @@ Service.propTypes = {
 export default Service;
 
 export const pageQuery = graphql`
-  query ServiceQuery {
-    prismicServices(uid: { eq: "product-design" }) {
+  query ServiceQuery($uid: String!) {
+    prismicServices(uid: { eq: $uid }) {
       uid
       data {
         title {

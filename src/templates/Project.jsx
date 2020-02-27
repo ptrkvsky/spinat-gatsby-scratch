@@ -1,10 +1,28 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 
-const Project = () => (
+const Project = ({ data }) => (
   <div>
-    <Layout>Project</Layout>
+    <Layout> {console.log(data)} Project</Layout>
   </div>
 );
 
 export default Project;
+
+export const pageQuery = graphql`
+  query projectQuery($uid: String!) {
+    prismicProjects(uid: { eq: $uid }) {
+      id
+      data {
+        body {
+          primary {
+            label {
+              html
+            }
+          }
+        }
+      }
+    }
+  }
+`;
