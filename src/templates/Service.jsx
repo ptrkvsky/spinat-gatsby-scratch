@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 
 const Service = ({ data }) => (
   <div>
-    {console.log(data)}
     <Layout>
       Big service inst it
       <div

@@ -2,7 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import { SectionHeroImage } from '../../styles/slices/HeroImage';
+import {
+  SectionHeroImage,
+  ButtonContainer,
+} from '../../styles/slices/HeroImage';
 import { ButtonPrimary } from '../../styles/buttons/buttonPrimary';
 
 const SliceHeroImage = ({ slice }) => (
@@ -16,9 +19,11 @@ const SliceHeroImage = ({ slice }) => (
         __html: slice.primary.title_hero.html,
       }}
     />
-    <Link css={ButtonPrimary} to="/home/">
-      test
-    </Link>
+    <ButtonContainer>
+      <Link css={ButtonPrimary} to="/home/">
+        test
+      </Link>
+    </ButtonContainer>
   </SectionHeroImage>
 );
 

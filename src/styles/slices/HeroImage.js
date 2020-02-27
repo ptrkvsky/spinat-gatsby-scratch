@@ -4,16 +4,20 @@ import theme from '../theme';
 const SectionHeroImage = styled('section')`
   position: relative;
   display: block;
-  padding: 70px 30px 70px 30px;
+  padding: 70px 0 70px 0;
 
   h1 {
+    position: relative;
+    padding-top: 40px;
     font-size: 78px;
     font-weight: 800;
     text-transform: uppercase;
-    position: relative;
+
     &:before {
       content: '';
       position: absolute;
+      top: 0;
+      left: 0;
       width: 70px;
       height: 3px;
       background-color: ${theme.colors.primary};
@@ -28,4 +32,8 @@ const SectionHeroImage = styled('section')`
   }
 `;
 
-export { SectionHeroImage };
+const ButtonContainer = styled('div')`
+  margin-top: 20px;
+`;
+
+export { SectionHeroImage, ButtonContainer };
