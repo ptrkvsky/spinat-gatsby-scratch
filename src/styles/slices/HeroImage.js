@@ -34,7 +34,7 @@ const SectionHeroImage = styled('section')`
 
   .illu {
     position: absolute !important;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     right: 0;
     width: 640px;
