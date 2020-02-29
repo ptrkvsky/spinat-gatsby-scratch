@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import theme from '../../theme';
+import mediaQueries from '../../mediaQueries';
 
 const HeaderContainer = styled('header')`
   position: sticky;
@@ -11,6 +12,11 @@ const HeaderContainer = styled('header')`
   max-width: ${theme.maxWidth};
   margin-left: auto;
   margin-right: auto;
+  background-color: ${theme.bg.main};
+  z-index: 900;
+  ${mediaQueries.tabletLandscape} {
+    padding: 0 10px;
+  }
 `;
 
 export { HeaderContainer };

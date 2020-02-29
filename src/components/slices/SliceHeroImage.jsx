@@ -9,7 +9,7 @@ import {
 import { ButtonPrimary } from '../../styles/buttons/buttonPrimary';
 
 const SliceHeroImage = ({ slice }) => (
-  <SectionHeroImage>
+  <SectionHeroImage className="max-container">
     <Img
       className="illu"
       fluid={slice.primary.hero_image1.localFile.childImageSharp.fluid}

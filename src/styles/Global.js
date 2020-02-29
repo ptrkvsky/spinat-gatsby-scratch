@@ -1,7 +1,7 @@
-import React from 'react'
-import { Global, css } from '@emotion/core'
-import theme from './theme'
-import mediaQueries from './mediaQueries'
+import React from 'react';
+import { Global, css } from '@emotion/core';
+import theme from './theme';
+import mediaQueries from './mediaQueries';
 
 export default function GlobalStyle() {
   return (
@@ -139,7 +139,7 @@ export default function GlobalStyle() {
         /* ------------- */
 
         body {
-          background: ${theme.colors.mainBg};
+          background: ${theme.bg.main};
           color: ${theme.colors.main};
           font-size: 18px;
           font-family: ${theme.fonts.primary};
@@ -203,5 +203,5 @@ export default function GlobalStyle() {
         }
       `}
     />
-  )
+  );
 }

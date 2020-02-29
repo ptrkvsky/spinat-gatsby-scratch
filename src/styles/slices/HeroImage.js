@@ -1,10 +1,14 @@
 import styled from '@emotion/styled';
 import theme from '../theme';
+import mediaQueries from '../mediaQueries';
 
 const SectionHeroImage = styled('section')`
   position: relative;
   display: block;
-  padding: 70px 0 70px 0;
+  padding: 150px 0 120px 0;
+  ${mediaQueries.tabletLandscape} {
+    padding: 100px 10px 80px 10px;
+  }
 
   h1 {
     position: relative;
@@ -12,6 +16,10 @@ const SectionHeroImage = styled('section')`
     font-size: 78px;
     font-weight: 800;
     text-transform: uppercase;
+
+    ${mediaQueries.mobile} {
+      font-size: 40px;
+    }
 
     &:before {
       content: '';

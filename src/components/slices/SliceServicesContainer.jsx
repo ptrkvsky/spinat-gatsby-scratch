@@ -5,7 +5,6 @@ import { ServicesContainer } from '../../styles/slices/SliceServicesContainer.js
 
 const SliceServicesContainer = ({ slice }) => (
   <ServicesContainer>
-    test
     {slice.items.map(item => (
       <SliceServiceDetail key={item.link_service.slug} item={item} />
     ))}

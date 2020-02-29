@@ -1,10 +1,14 @@
 const theme = {
   colors: {
-    mainBg: '#000000',
     main: '#ebe9e1',
-    primary: '#33cc3b',
+    // primary: '#33cc3b',
+    primary: '#00be00',
     secondary: '#343d4f',
     tertiary: '#0105d2',
+  },
+  bg: {
+    main: '#000000',
+    lighter: '#1b1b1b',
   },
   fonts: {
     primary: "'Poppins', serif",
