@@ -26,6 +26,15 @@ export const pageQuery = graphql`
     prismicHomepage {
       data {
         body {
+          ... on PrismicHomepageBodyTitle {
+            id
+            primary {
+              subtitle
+              title {
+                html
+              }
+            }
+          }
           ... on PrismicHomepageBodyHeroImage {
             primary {
               title_hero {

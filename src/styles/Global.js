@@ -162,6 +162,10 @@ export default function GlobalStyle() {
           margin-right: auto;
         }
 
+        .bg-opposite {
+          background-color: ${theme.bg.opposite};
+        }
+
         /* TITLES */
         .primary-title {
           font-size: 45px;

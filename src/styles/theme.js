@@ -2,13 +2,15 @@ const theme = {
   colors: {
     main: '#ebe9e1',
     // primary: '#33cc3b',
-    primary: '#00be00',
+    primary: '#2ca838',
     secondary: '#343d4f',
     tertiary: '#0105d2',
   },
   bg: {
     main: '#000000',
     lighter: '#1b1b1b',
+    opposite: '#FFF',
+    oppositeDarker: '#f3f3f3',
   },
   fonts: {
     primary: "'Poppins', serif",
@@ -17,7 +19,7 @@ const theme = {
   fontSize: {
     button: '16px',
   },
-
+  columnGap: '30px',
   maxWidth: '1260px',
 };
 
