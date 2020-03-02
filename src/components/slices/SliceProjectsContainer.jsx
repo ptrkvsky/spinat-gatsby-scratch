@@ -22,8 +22,9 @@ const SliceProjects = ({ slice }) => {
     <Carousel slidesToShow={nbSlide} cellSpacing={30}>
       {slice.map(item => (
         <SliceProjectDetail
-          key={item.project_link.document[0].data.categories[0].category.slug}
+          key={item.project_link.uid}
           item={item.project_link.document[0].data}
+          uid={item.project_link.uid}
         />
       ))}
     </Carousel>

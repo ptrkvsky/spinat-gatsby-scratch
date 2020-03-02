@@ -4,21 +4,19 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 
 const Service = ({ data }) => (
-  <div>
-    <Layout>
-      <h2>Services</h2>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.prismicServices.data.title.html,
-        }}
-      />
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.prismicServices.data.page_content.html,
-        }}
-      />
-    </Layout>
-  </div>
+  <>
+    <h2>Services</h2>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: data.prismicServices.data.title.html,
+      }}
+    />
+    <div
+      dangerouslySetInnerHTML={{
+        __html: data.prismicServices.data.page_content.html,
+      }}
+    />
+  </>
 );
 Service.propTypes = {
   data: PropTypes.object.isRequired,

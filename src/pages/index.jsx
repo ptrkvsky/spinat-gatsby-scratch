@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
@@ -9,12 +9,12 @@ import Slices from '../components/Slices';
 const IndexPage = ({ data }) => {
   console.log(data.allPrismicServices);
   return (
-    <Layout>
+    <>
+      <Link to="/page-test">Mon link test</Link>
       {console.log({ data })}
       <SEO title="Home" />
-
       <Slices key={data.id} slices={data.prismicHomepage.data.body} />
-    </Layout>
+    </>
   );
 };
 
@@ -74,11 +74,17 @@ export const pageQuery = graphql`
             id
             items {
               project_link {
+                uid
                 document {
                   data {
                     categories {
                       category {
                         slug
+                        document {
+                          data {
+                            name
+                          }
+                        }
                       }
                     }
                     main_title

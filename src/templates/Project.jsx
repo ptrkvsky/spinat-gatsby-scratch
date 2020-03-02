@@ -2,11 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 
-const Project = ({ data }) => (
-  <div>
-    <Layout> {console.log(data)} Project</Layout>
-  </div>
-);
+const Project = ({ data }) => <div>{console.log(data)} Project</div>;
 
 export default Project;
 

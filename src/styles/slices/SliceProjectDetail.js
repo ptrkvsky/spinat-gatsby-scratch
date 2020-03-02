@@ -9,4 +9,12 @@ const TitleCategory = styled('h3')`
   margin: 0px 0px 10px 0px;
 `;
 
-export { TitleCategory };
+const TitleProject = styled('h4')`
+  font-family: ${theme.fonts.primary};
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 0px 0px 10px 0px;
+`;
+
+export { TitleCategory, TitleProject };

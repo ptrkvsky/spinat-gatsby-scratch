@@ -10,6 +10,7 @@ import { ButtonPrimary } from '../../styles/buttons/buttonPrimary';
 
 const SliceHeroImage = ({ slice }) => (
   <SectionHeroImage className="max-container">
+    {console.log(slice)}
     <Img
       className="illu"
       fluid={slice.primary.hero_image1.localFile.childImageSharp.fluid}
@@ -20,7 +21,7 @@ const SliceHeroImage = ({ slice }) => (
       }}
     />
     <ButtonContainer>
-      <Link css={ButtonPrimary} to="/home/">
+      <Link css={ButtonPrimary} to={`/projet/${slice.primary.button_link.url}`}>
         test
       </Link>
     </ButtonContainer>

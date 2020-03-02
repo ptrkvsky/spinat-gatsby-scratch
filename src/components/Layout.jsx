@@ -8,6 +8,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import Transition from '../lib/animations/Transition';
 
 import Header from './Header';
 import GlobalStyle from '../styles/Global';
@@ -37,7 +38,10 @@ const Layout = ({ children }) => {
         className={loading ? 'main-container loading' : 'main-container loaded'}
       >
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
+        <main>
+          {console.log(location)}
+          <Transition location={location}>{children}</Transition>
+        </main>
       </div>
       <footer>
         © {new Date().getFullYear()}, Built with
@@ -49,6 +53,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Layout;
