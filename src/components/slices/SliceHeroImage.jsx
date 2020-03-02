@@ -16,7 +16,7 @@ const SliceHeroImage = ({ slice }) => (
         __html: slice.primary.title_hero.html,
       }}
     />
-    <Link css={ButtonPrimary} to="/home/">
+    <Link css={ButtonPrimary} to={slice.primarty.button_link.url}>
       test
     </Link>
   </SectionHeroImage>
