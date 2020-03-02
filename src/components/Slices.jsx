@@ -5,7 +5,7 @@ import SliceHeroImage from './slices/SliceHeroImage';
 import SliceInfosIconsContainer from './slices/SliceInfosIconsContainer';
 import SliceServicesContainer from './slices/SliceServicesContainer';
 import SliceTitle from './slices/SliceTitle';
-import SliceProjects from './slices/SliceProjects';
+import SliceProjects from './slices/SliceProjectsContainer';
 
 const Slices = ({ slices }) =>
   slices.map(slice => {

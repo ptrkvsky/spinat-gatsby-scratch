@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import Img from 'gatsby-image';
 import Carousel from 'nuka-carousel';
+import SliceProjectDetail from './SliceProjectDetail.jsx';
 import useWindowWidth from '../../lib/hooks/useWindowWidth.js';
 
 const SliceProjects = ({ slice }) => {
@@ -19,18 +20,11 @@ const SliceProjects = ({ slice }) => {
 
   return (
     <Carousel slidesToShow={nbSlide} cellSpacing={30}>
-      {console.log(slice)}
       {slice.map(item => (
-        <div>
-          {item.project_link.document[0].data.categories[0].category.slug}
-          {item.project_link.document[0].data.main_title}
-          <Img
-            fluid={
-              item.project_link.document[0].data.main_images.localFile
-                .childImageSharp.fluid
-            }
-          />
-        </div>
+        <SliceProjectDetail
+          key={item.project_link.document[0].data.categories[0].category.slug}
+          item={item.project_link.document[0].data}
+        />
       ))}
     </Carousel>
   );
