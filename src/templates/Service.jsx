@@ -5,9 +5,8 @@ import Layout from '../components/Layout';
 
 const Service = ({ data }) => (
   <div>
-    {console.log(data)}
     <Layout>
-      Big service inst it
+      <h2>Services</h2>
       <div
         dangerouslySetInnerHTML={{
           __html: data.prismicServices.data.title.html,

@@ -1,9 +1,14 @@
 import styled from '@emotion/styled';
 import theme from '../../theme';
+import mediaQueries from '../../mediaQueries';
 
-const HeaderContainer = styled('header')`
+const HeaderBg = styled('header')`
   position: sticky;
   top: 0;
+  z-index: 900;
+  background-color: ${theme.bg.main};
+`;
+const HeaderContainer = styled('div')`
   display: flex;
   min-height: 100px;
   align-items: center;
@@ -11,6 +16,11 @@ const HeaderContainer = styled('header')`
   max-width: ${theme.maxWidth};
   margin-left: auto;
   margin-right: auto;
+  background-color: ${theme.bg.main};
+
+  ${mediaQueries.tabletLandscape} {
+    padding: 0 10px;
+  }
 `;
 
-export { HeaderContainer };
+export { HeaderContainer, HeaderBg };

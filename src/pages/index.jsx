@@ -10,8 +10,9 @@ const IndexPage = ({ data }) => {
   console.log(data.allPrismicServices);
   return (
     <Layout>
-      {console.log(data)}
+      {console.log({ data })}
       <SEO title="Home" />
+
       <Slices key={data.id} slices={data.prismicHomepage.data.body} />
     </Layout>
   );
@@ -26,6 +27,15 @@ export const pageQuery = graphql`
     prismicHomepage {
       data {
         body {
+          ... on PrismicHomepageBodyTitle {
+            id
+            primary {
+              subtitle
+              title {
+                html
+              }
+            }
+          }
           ... on PrismicHomepageBodyHeroImage {
             primary {
               title_hero {
@@ -58,6 +68,32 @@ export const pageQuery = graphql`
                 html
               }
               icon_class
+            }
+          }
+          ... on PrismicHomepageBodyProjectSlider {
+            id
+            items {
+              project_link {
+                document {
+                  data {
+                    categories {
+                      category {
+                        slug
+                      }
+                    }
+                    main_title
+                    main_images {
+                      localFile {
+                        childImageSharp {
+                          fluid {
+                            ...GatsbyImageSharpFluid
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
           ... on PrismicHomepageBodyServices {

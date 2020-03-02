@@ -1,7 +1,7 @@
-import React from 'react'
-import { Global, css } from '@emotion/core'
-import theme from './theme'
-import mediaQueries from './mediaQueries'
+import React from 'react';
+import { Global, css } from '@emotion/core';
+import theme from './theme';
+import mediaQueries from './mediaQueries';
 
 export default function GlobalStyle() {
   return (
@@ -139,11 +139,24 @@ export default function GlobalStyle() {
         /* ------------- */
 
         body {
-          background: ${theme.colors.mainBg};
+          background: ${theme.bg.main};
           color: ${theme.colors.main};
           font-size: 18px;
           font-family: ${theme.fonts.primary};
           min-height: 100vh;
+        }
+
+        .main-container {
+          position: relative;
+          &:before {
+            content: '';
+            z-index: 995;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            transition: all 0.5s ease-in-out;
+          }
         }
 
         img {
@@ -160,6 +173,10 @@ export default function GlobalStyle() {
           max-width: ${theme.maxWidth};
           margin-left: auto;
           margin-right: auto;
+        }
+
+        .bg-opposite {
+          background-color: ${theme.bg.opposite};
         }
 
         /* TITLES */
@@ -203,5 +220,5 @@ export default function GlobalStyle() {
         }
       `}
     />
-  )
+  );
 }

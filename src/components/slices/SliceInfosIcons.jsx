@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const SliceHeroImage = ({ slice }) =>
   slice.items.map(item => (
@@ -18,10 +18,10 @@ const SliceHeroImage = ({ slice }) =>
         }}
       />
     </div>
-  ))
+  ));
 
 SliceHeroImage.propTypes = {
   slice: PropTypes.object.isRequired,
-}
+};
 
-export default SliceHeroImage
+export default SliceHeroImage;
