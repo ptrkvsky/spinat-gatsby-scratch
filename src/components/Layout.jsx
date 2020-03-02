@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -23,12 +23,20 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const [loading, setLoading] = useState(true);
+
+  const checkLoading = () => !loading;
+
   return (
     <>
       <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
 
-      <main>{children}</main>
+      <div
+        className={loading ? 'main-container open' : 'main-container closed'}
+      >
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main>{children}</main>
+      </div>
       <footer>
         © {new Date().getFullYear()}, Built with
         <a href="https://www.gatsbyjs.org">Gatsby</a>

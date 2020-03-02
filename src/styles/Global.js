@@ -146,6 +146,19 @@ export default function GlobalStyle() {
           min-height: 100vh;
         }
 
+        .main-container {
+          position: relative;
+          &:before {
+            content: '';
+            z-index: 995;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+
         img {
           max-width: 100%;
         }
