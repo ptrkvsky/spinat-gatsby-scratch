@@ -25,8 +25,10 @@ const Layout = ({ children }) => {
   `);
 
   const [loading, setLoading] = useState(true);
-
+  const [myLocation, setLocation] = useState(true);
   useEffect(() => {
+    // avoid build error on netlify;
+    setLocation(location);
     setLoading(false);
   }, []);
 
@@ -39,8 +41,11 @@ const Layout = ({ children }) => {
       >
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>
-          {console.log(location)}
-          <Transition location={location}>{children}</Transition>
+          {loading ? (
+            <div>test</div>
+          ) : (
+            <Transition location={myLocation}>{children}</Transition>
+          )}
         </main>
       </div>
       <footer>
