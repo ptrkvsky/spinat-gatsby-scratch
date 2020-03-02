@@ -19,17 +19,11 @@ const SliceHeroImage = ({ slice }) => (
         __html: slice.primary.title_hero.html,
       }}
     />
-<<<<<<< HEAD
-    <Link css={ButtonPrimary} to={slice.primarty.button_link.url}>
-      test
-    </Link>
-=======
     <ButtonContainer>
       <Link css={ButtonPrimary} to="/home/">
         test
       </Link>
     </ButtonContainer>
->>>>>>> 1311d1367ec7d1ba025de13a67ec7e5644435621
   </SectionHeroImage>
 );
 

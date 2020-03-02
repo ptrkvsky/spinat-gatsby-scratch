@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -25,14 +25,16 @@ const Layout = ({ children }) => {
 
   const [loading, setLoading] = useState(true);
 
-  const checkLoading = () => !loading;
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   return (
     <>
       <GlobalStyle />
 
       <div
-        className={loading ? 'main-container open' : 'main-container closed'}
+        className={loading ? 'main-container loading' : 'main-container loaded'}
       >
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>

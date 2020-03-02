@@ -148,6 +148,7 @@ export default function GlobalStyle() {
 
         .main-container {
           position: relative;
+
           &:before {
             content: '';
             z-index: 995;
@@ -155,7 +156,12 @@ export default function GlobalStyle() {
             width: 100%;
             height: 100%;
             background-color: #000;
-            transition: all 0.5s ease-in-out;
+            transition: background-color 1s cubic-bezier(0.4, 0, 1, 1);
+          }
+          &.loaded {
+            &:before {
+              background-color: transparent;
+            }
           }
         }
 
