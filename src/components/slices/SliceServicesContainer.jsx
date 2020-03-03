@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import SliceServiceDetail from './SliceServiceDetail';
-import {
-  ServicesContainer,
-  ServicesBackground,
-} from '../../styles/slices/SliceServicesContainer.js';
+import { ServicesContainer } from '../../styles/slices/SliceServicesContainer.js';
 
 const SliceServicesContainer = ({ slice }) => (
   <ServicesContainer className="max-container">

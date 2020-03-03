@@ -2,6 +2,10 @@ import React from 'react';
 import { Global, css } from '@emotion/core';
 import theme from './theme';
 import mediaQueries from './mediaQueries';
+import TradeGothicWoff from './fonts/tradegothic/tradegothic.woff';
+import TradeGothicWoff2 from './fonts/tradegothic/tradegothic.woff2';
+import TradeGothicBoldWoff from './fonts/tradegothic/tradegothic-bold.woff';
+import TradeGothicBoldWoff2 from './fonts/tradegothic/tradegothic-bold.woff2';
 
 export default function GlobalStyle() {
   return (
@@ -132,6 +136,20 @@ export default function GlobalStyle() {
         table {
           border-collapse: collapse;
           border-spacing: 0;
+        }
+
+        /* ------------- */
+        /*     FONTS     */
+        /* ------------- */
+        @font-face {
+          font-family: 'Trade Gothic';
+          src: url(${TradeGothicWoff2}) format('woff2'),
+            url(${TradeGothicWoff}) format('woff');
+        }
+        @font-face {
+          font-family: 'Trade Gothic Bold';
+          src: url(${TradeGothicWoff2}) format('woff2'),
+            url(${TradeGothicWoff2}) format('woff');
         }
 
         /* ------------- */

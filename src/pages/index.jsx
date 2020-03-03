@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
+import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 
 import Slices from '../components/Slices';

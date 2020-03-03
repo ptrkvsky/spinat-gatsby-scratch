@@ -19,19 +19,19 @@ const Header = ({ siteTitle }) => (
       <MainNav>
         <ul>
           <li>
-            <a href="./index.html">test</a>
+            <a href="/">Accueil</a>
           </li>
           <li>
-            <a href="./index.html">test</a>
+            <a href="/">Services</a>
           </li>
           <li>
-            <a href="./index.html">test</a>
+            <a href="/">Projects</a>
           </li>
           <li>
-            <a href="./index.html">test</a>
+            <a href="/">About</a>
           </li>
           <li>
-            <a href="./index.html">test</a>
+            <a href="/">Client</a>
           </li>
         </ul>
       </MainNav>

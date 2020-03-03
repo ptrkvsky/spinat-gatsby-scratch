@@ -1,5 +1,6 @@
 // Import necessary dependencies
 
+import PropTypes from 'prop-types';
 import React from 'react';
 import {
   TransitionGroup,
@@ -55,6 +56,11 @@ const Transition = ({ children, location }) => {
       </ReactTransition>
     </TransitionGroup>
   );
+};
+
+Transition.propTypes = {
+  children: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Transition;
