@@ -18,6 +18,7 @@ const SliceProjectDetail = ({ item, uid }) => (
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          filter: 'grayscale(100%)',
         }}
         className="bg-project-detail"
         Tag="div"

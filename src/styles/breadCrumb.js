@@ -9,15 +9,15 @@ const BreadCrumb = styled('nav')`
     li {
       &:before {
         content: '/';
-        font-size: 10px;
+        font-size: 15px;
+        padding: 0 6px;
       }
       &:first-child::before {
         content: '';
+        padding: 0;
       }
-      a {
-        display: inline-block;
+      .item {
         font-family: 'Trade Gothic Bold';
-        padding: 0 20px;
         font-weight: 700;
         text-transform: uppercase;
         &:first-child {

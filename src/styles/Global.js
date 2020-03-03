@@ -2,10 +2,10 @@ import React from 'react';
 import { Global, css } from '@emotion/core';
 import theme from './theme';
 import mediaQueries from './mediaQueries';
-import TradeGothicWoff from './fonts/tradegothic/tradegothic.woff';
-import TradeGothicWoff2 from './fonts/tradegothic/tradegothic.woff2';
-import TradeGothicBoldWoff from './fonts/tradegothic/tradegothic-bold.woff';
-import TradeGothicBoldWoff2 from './fonts/tradegothic/tradegothic-bold.woff2';
+// import TradeGothicWoff from './fonts/tradegothic/tradegothic.woff';
+// import TradeGothicWoff2 from './fonts/tradegothic/tradegothic.woff2';
+// import TradeGothicBoldWoff from './fonts/tradegothic/tradegothic-bold.woff';
+// import TradeGothicBoldWoff2 from './fonts/tradegothic/tradegothic-bold.woff2';
 
 export default function GlobalStyle() {
   return (
@@ -141,7 +141,7 @@ export default function GlobalStyle() {
         /* ------------- */
         /*     FONTS     */
         /* ------------- */
-        @font-face {
+        /* @font-face {
           font-family: 'Trade Gothic';
           src: url(${TradeGothicWoff2}) format('woff2'),
             url(${TradeGothicWoff}) format('woff');
@@ -150,7 +150,7 @@ export default function GlobalStyle() {
           font-family: 'Trade Gothic Bold';
           src: url(${TradeGothicWoff2}) format('woff2'),
             url(${TradeGothicWoff2}) format('woff');
-        }
+        } */
 
         /* ------------- */
         /* STYLES GLOBAL */

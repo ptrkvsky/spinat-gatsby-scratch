@@ -11,6 +11,10 @@ const Container = styled('div')`
       transform: translateX(0);
     }
   }
+
+  .bg-project-detail:hover {
+    filter: none !important;
+  }
 `;
 
 const TitleCategory = styled('h3')`

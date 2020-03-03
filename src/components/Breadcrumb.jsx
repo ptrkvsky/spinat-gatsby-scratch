@@ -6,16 +6,24 @@ const Breadcrumb = () => (
   <BreadCrumb aria-label="Fil d'arianne" className="breadcrumb">
     <ul>
       <li>
-        <Link to="/">Home</Link>
+        <Link className="item" to="/">
+          Home
+        </Link>
       </li>
       <li>
-        <Link to="/">Category</Link>
+        <Link className="item" to="/">
+          Category
+        </Link>
       </li>
       <li>
-        <Link to="/">Sub-Category</Link>
+        <Link className="item" to="/">
+          Sub-Category
+        </Link>
       </li>
       <li>
-        <span aria-current="page">Product</span>
+        <span className="item" aria-current="page">
+          Product
+        </span>
       </li>
     </ul>
   </BreadCrumb>
