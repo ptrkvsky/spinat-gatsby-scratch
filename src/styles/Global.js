@@ -180,6 +180,10 @@ export default function GlobalStyle() {
           max-width: ${theme.maxWidth};
           margin-left: auto;
           margin-right: auto;
+          ${mediaQueries.tabletteHorizontale} {
+            width: 100%;
+            padding: 0 5%;
+          }
         }
 
         .bg-opposite {
@@ -210,19 +214,6 @@ export default function GlobalStyle() {
           margin-bottom: 20px;
           &:hover {
             transform: scale(0.95);
-          }
-        }
-
-        /* LAYOUT */
-        .max-container {
-          width: 1280px;
-          max-width: 100%;
-          margin-left: auto;
-          margin-right: auto;
-
-          ${mediaQueries.tabletteHorizontale} {
-            width: 100%;
-            padding: 0 5%;
           }
         }
       `}

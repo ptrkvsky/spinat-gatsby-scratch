@@ -18,10 +18,13 @@ const ButtonPrimary = css`
   color: ${theme.colors.main};
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  span {
+    position: relative;
+    z-index: 1;
+  }
   &:before {
     content: '';
     position: absolute;
-    z-index: -1;
     top: 0;
     left: 0;
     right: 0;

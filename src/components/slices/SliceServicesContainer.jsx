@@ -7,13 +7,11 @@ import {
 } from '../../styles/slices/SliceServicesContainer.js';
 
 const SliceServicesContainer = ({ slice }) => (
-  <ServicesBackground>
-    <ServicesContainer className="max-container">
-      {slice.items.map(item => (
-        <SliceServiceDetail key={item.link_service.slug} item={item} />
-      ))}
-    </ServicesContainer>
-  </ServicesBackground>
+  <ServicesContainer className="max-container">
+    {slice.items.map(item => (
+      <SliceServiceDetail key={item.link_service.slug} item={item} />
+    ))}
+  </ServicesContainer>
 );
 
 SliceServicesContainer.propTypes = {

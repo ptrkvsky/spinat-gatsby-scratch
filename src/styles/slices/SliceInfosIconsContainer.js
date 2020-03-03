@@ -2,6 +2,9 @@ import styled from '@emotion/styled';
 import mediaQueries from '../mediaQueries';
 import theme from '../theme';
 
+const InfosIconsBg = styled('div')`
+  background-color: ${theme.bg.opposite};
+`;
 const InfosIconsContainer = styled('div')`
   position: relative;
   z-index: 10;
@@ -14,4 +17,4 @@ const InfosIconsContainer = styled('div')`
   }
 `;
 
-export { InfosIconsContainer };
+export { InfosIconsContainer, InfosIconsBg };

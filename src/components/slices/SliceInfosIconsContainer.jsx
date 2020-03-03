@@ -1,14 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import SliceInfosIconsDetail from './SliceInfosIconsDetail';
-import { InfosIconsContainer } from '../../styles/slices/SliceInfosIconsContainer';
+import {
+  InfosIconsContainer,
+  InfosIconsBg,
+} from '../../styles/slices/SliceInfosIconsContainer';
 
 const SliceInfosIconsContainer = ({ slice }) => (
-  <InfosIconsContainer className="max-container">
-    {slice.items.map(item => (
-      <SliceInfosIconsDetail item={item} />
-    ))}
-  </InfosIconsContainer>
+  <InfosIconsBg>
+    <InfosIconsContainer className="max-container">
+      {slice.items.map(item => (
+        <SliceInfosIconsDetail item={item} />
+      ))}
+    </InfosIconsContainer>
+  </InfosIconsBg>
 );
 
 SliceInfosIconsContainer.propTypes = {

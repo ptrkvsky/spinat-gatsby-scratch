@@ -6,7 +6,7 @@ const HeaderBg = styled('header')`
   position: sticky;
   top: 0;
   z-index: 900;
-  background-color: ${theme.bg.main};
+  background-color: ${theme.bg.opposite};
 `;
 const HeaderContainer = styled('div')`
   display: flex;
@@ -16,7 +16,7 @@ const HeaderContainer = styled('div')`
   max-width: ${theme.maxWidth};
   margin-left: auto;
   margin-right: auto;
-  background-color: ${theme.bg.main};
+  background-color: ${theme.bg.opposite};
 
   ${mediaQueries.tabletLandscape} {
     padding: 0 10px;

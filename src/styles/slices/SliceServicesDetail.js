@@ -24,6 +24,9 @@ const ServiceContainer = styled('article')`
       transform: translateX(20px);
       color: #fff;
     }
+    svg {
+      color: #fff;
+    }
     .icon {
       transform: scale(1);
     }

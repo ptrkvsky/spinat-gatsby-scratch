@@ -18,12 +18,14 @@ const SliceServiceDetail = ({ item }) => {
       return false;
   }
   return (
-    <ServiceContainer>
-      <FontAwesomeIcon className="icon" size="3x" icon={icon} />
-      <Link className="link-item" to={`service/${item.link_service.slug}`}>
-        {item.link_service.document[0].data.title.text}
-      </Link>
-    </ServiceContainer>
+    <Link to={`service/${item.link_service.slug}`}>
+      <ServiceContainer>
+        <FontAwesomeIcon className="icon" size="3x" icon={icon} />
+        <span className="link-item">
+          {item.link_service.document[0].data.title.text}
+        </span>
+      </ServiceContainer>
+    </Link>
   );
 };
 

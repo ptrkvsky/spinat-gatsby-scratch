@@ -7,7 +7,7 @@ import {
 } from '../../styles/slices/SliceTitle';
 
 const SliceTitle = ({ slice }) => (
-  <SliceTitleContainer className="bg-opposite">
+  <div className={slice.slice_label}>
     <Title className="max-container">
       <div
         className="title"
@@ -15,7 +15,7 @@ const SliceTitle = ({ slice }) => (
       />
       <SubTitle>{slice.primary.subtitle}</SubTitle>
     </Title>
-  </SliceTitleContainer>
+  </div>
 );
 
 SliceTitle.propTypes = {

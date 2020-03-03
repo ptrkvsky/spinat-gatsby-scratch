@@ -10,23 +10,23 @@ const Transition = ({ children, location }) => {
   // Using TransitionGroup and ReactTransition which are both
   // coming from  'react-transition-group' and are required for transitions to work
   // This variable will be responsible for our animation duration
-  const timeout = 200;
+  const timeout = 500;
 
   // This object contains basic styles for animation, but you can extend them to whatever you like. Be creative!
   const getTransitionStyles = {
     entering: {
       position: 'absolute',
       opacity: 0,
+      transform: `translateY(0)`,
     },
     entered: {
       transition: `all ${timeout}ms ease-in-out`,
-      opacity: 1,
-      top: '50px',
+      transform: `translateY(0)`,
     },
     exiting: {
       transition: `all ${timeout}ms ease-in-out`,
       opacity: 0,
-      top: 0,
+      transform: `translateY(70px)`,
     },
   };
   const { pathname } = location;

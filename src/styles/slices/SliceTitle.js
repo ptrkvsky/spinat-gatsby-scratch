@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 import theme from '../theme';
 
-const SliceTitleContainer = styled('div')`
-  padding-top: 140px;
-`;
-
 const Title = styled('div')`
   position: relative;
   .title {
@@ -21,6 +17,10 @@ const Title = styled('div')`
     height: 3px;
     background-color: ${theme.colors.primary};
   }
+
+  .withmargin & {
+    padding-top: 140px;
+  }
 `;
 
 const SubTitle = styled('div')`
@@ -30,4 +30,4 @@ const SubTitle = styled('div')`
   line-height: 17px;
   color: ${theme.colors.primary};
 `;
-export { SliceTitleContainer, Title, SubTitle };
+export { Title, SubTitle };

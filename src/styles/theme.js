@@ -7,9 +7,9 @@ const theme = {
     tertiary: '#0105d2',
   },
   bg: {
-    main: '#000000',
+    main: '#FFF',
     lighter: '#1b1b1b',
-    opposite: '#FFF',
+    opposite: '#000000',
     oppositeDarker: '#f3f3f3',
   },
   fonts: {

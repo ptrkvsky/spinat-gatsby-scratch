@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
-import Img from 'gatsby-image';
 import Carousel from 'nuka-carousel';
 import SliceProjectDetail from './SliceProjectDetail.jsx';
 import useWindowWidth from '../../lib/hooks/useWindowWidth.js';
+import '../../styles/slices/sliceProject.css';
 
 const SliceProjects = ({ slice }) => {
   const windowWidth = useWindowWidth();
@@ -19,7 +19,11 @@ const SliceProjects = ({ slice }) => {
   }, [windowWidth]);
 
   return (
-    <Carousel slidesToShow={nbSlide} cellSpacing={30}>
+    <Carousel
+      className="carousel-project"
+      slidesToShow={nbSlide}
+      cellSpacing={30}
+    >
       {slice.map(item => (
         <SliceProjectDetail
           key={item.project_link.uid}

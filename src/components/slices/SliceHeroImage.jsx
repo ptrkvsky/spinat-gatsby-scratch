@@ -7,25 +7,31 @@ import {
   ButtonContainer,
 } from '../../styles/slices/HeroImage';
 import { ButtonPrimary } from '../../styles/buttons/buttonPrimary';
+import theme from '../../styles/theme';
 
 const SliceHeroImage = ({ slice }) => (
-  <SectionHeroImage className="max-container">
-    {console.log(slice)}
-    <Img
-      className="illu"
-      fluid={slice.primary.hero_image1.localFile.childImageSharp.fluid}
-    />
-    <div
-      dangerouslySetInnerHTML={{
-        __html: slice.primary.title_hero.html,
-      }}
-    />
-    <ButtonContainer>
-      <Link css={ButtonPrimary} to={`/projet/${slice.primary.button_link.url}`}>
-        test
-      </Link>
-    </ButtonContainer>
-  </SectionHeroImage>
+  <div style={{ backgroundColor: theme.bg.opposite }}>
+    <SectionHeroImage className="max-container">
+      {console.log(slice)}
+      <Img
+        className="illu"
+        fluid={slice.primary.hero_image1.localFile.childImageSharp.fluid}
+      />
+      <div
+        dangerouslySetInnerHTML={{
+          __html: slice.primary.title_hero.html,
+        }}
+      />
+      <ButtonContainer>
+        <Link
+          css={ButtonPrimary}
+          to={`/projet/${slice.primary.button_link.url}`}
+        >
+          <span>Contactez l'élite</span>
+        </Link>
+      </ButtonContainer>
+    </SectionHeroImage>
+  </div>
 );
 
 SliceHeroImage.propTypes = {

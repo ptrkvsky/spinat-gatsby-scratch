@@ -10,8 +10,6 @@ const IndexPage = ({ data }) => {
   console.log(data.allPrismicServices);
   return (
     <>
-      <Link to="/page-test">Mon link test</Link>
-      {console.log({ data })}
       <SEO title="Home" />
       <Slices key={data.id} slices={data.prismicHomepage.data.body} />
     </>
@@ -29,6 +27,7 @@ export const pageQuery = graphql`
         body {
           ... on PrismicHomepageBodyTitle {
             id
+            slice_label
             primary {
               subtitle
               title {
