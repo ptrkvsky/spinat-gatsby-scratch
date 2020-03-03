@@ -139,20 +139,6 @@ export default function GlobalStyle() {
         }
 
         /* ------------- */
-        /*     FONTS     */
-        /* ------------- */
-        /* @font-face {
-          font-family: 'Trade Gothic';
-          src: url(${TradeGothicWoff2}) format('woff2'),
-            url(${TradeGothicWoff}) format('woff');
-        }
-        @font-face {
-          font-family: 'Trade Gothic Bold';
-          src: url(${TradeGothicWoff2}) format('woff2'),
-            url(${TradeGothicWoff2}) format('woff');
-        } */
-
-        /* ------------- */
         /* STYLES GLOBAL */
         /* ------------- */
 
