@@ -11,14 +11,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Poppins', 'Roboto Condensed'],
-        },
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-web-font-loader',
+    //   options: {
+    //     google: {
+    //       families: ['Poppins', 'Roboto Condensed'],
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
