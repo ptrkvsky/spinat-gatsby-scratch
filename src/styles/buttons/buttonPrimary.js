@@ -17,6 +17,7 @@ const ButtonPrimary = css`
   background: rgba(51, 51, 51, 0);
   color: ${theme.colors.opposite};
   transition: all 0.2s ease-in-out;
+  font-family: ${theme.fonts.title};
   cursor: pointer;
   span {
     position: relative;

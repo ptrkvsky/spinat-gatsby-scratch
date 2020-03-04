@@ -6,6 +6,8 @@ import TradeGothicWoff from './fonts/tradegothic/tradegothic.woff';
 import TradeGothicWoff2 from './fonts/tradegothic/tradegothic.woff2';
 import TradeGothicBoldWoff from './fonts/tradegothic/tradegothic-bold.woff';
 import TradeGothicBoldWoff2 from './fonts/tradegothic/tradegothic-bold.woff2';
+import AvantGardeBoldWoff from './fonts/avantgarde/AvantGarde-Bold.woff';
+import AvantGardeBoldWoff2 from './fonts/avantgarde/AvantGarde-Bold.woff2';
 
 export default function GlobalStyle() {
   return (
@@ -153,7 +155,12 @@ export default function GlobalStyle() {
             url(${TradeGothicBoldWoff}) format('woff');
           font-display: swap;
         }
-
+        @font-face {
+          font-family: 'Avant Garde Bold';
+          src: url(${AvantGardeBoldWoff2}) format('woff2'),
+            url(${AvantGardeBoldWoff}) format('woff');
+          font-display: swap;
+        }
         /* ------------- */
         /* STYLES GLOBAL */
         /* ------------- */

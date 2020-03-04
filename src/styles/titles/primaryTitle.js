@@ -8,10 +8,9 @@ const PrimaryTitle = styled('div')`
     font-weight: 700;
     line-height: 58px;
     padding: 20px 0 10px;
-    /* color: ${theme.colors.secondary}; */
+    font-family: ${theme.fonts.title};
     color: ${props =>
-      props.primary ? theme.colors.secondary : theme.colors.opposite}
-
+      props.primary ? theme.colors.quaternary : theme.colors.opposite};
   }
   &:before {
     content: '';

@@ -17,6 +17,8 @@ const ServiceContainer = styled('article')`
     position: relative;
     transform: translateX(-40px);
     transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+    font-family: ${theme.fonts.title};
+    text-transform: capitalize;
   }
   &:hover {
     background-color: ${theme.colors.primary};

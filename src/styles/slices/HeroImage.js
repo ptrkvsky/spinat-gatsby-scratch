@@ -14,8 +14,8 @@ const SectionHeroImage = styled('section')`
     position: relative;
     padding-top: 40px;
     font-size: 78px;
-    font-weight: 800;
     text-transform: uppercase;
+    font-family: ${theme.fonts.title};
     color: ${theme.colors.opposite};
 
     ${mediaQueries.mobile} {

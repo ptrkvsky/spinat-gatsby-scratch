@@ -21,6 +21,7 @@ const InfosIconsDetailContainer = styled('article')`
     font-weight: 700;
     line-height: 1.4em;
     margin: 0px 0px 5px 0px;
+    font-family: ${theme.fonts.title};
     color: ${theme.colors.opposite};
     &:after {
       content: '';
@@ -31,6 +32,9 @@ const InfosIconsDetailContainer = styled('article')`
       height: 3px;
       background-color: ${theme.colors.opposite};
     }
+  }
+  .bloc-shortdesc {
+    line-height: 1.4;
   }
   .bloc-shortdesc,
   svg {

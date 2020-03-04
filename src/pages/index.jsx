@@ -7,7 +7,7 @@ import Slices from '../components/Slices';
 
 const IndexPage = ({ data }) => (
   <>
-    <SEO title="Home" />
+    <SEO title="Web agency" />
     <Slices key={data.id} slices={data.prismicHomepage.data.body} />
   </>
 );

@@ -4,6 +4,7 @@ const theme = {
     primary: '#2ca838',
     secondary: '#343d4f',
     tertiary: '#0105d2',
+    quaternary: '#101010', // black
     opposite: '#FFF',
   },
   bg: {
@@ -15,7 +16,7 @@ const theme = {
   },
   fonts: {
     primary: "'Trade Gothic', serif",
-    secondary: "'Poppins', serif",
+    title: "'Avant Garde Bold', serif",
   },
   fontSize: {
     button: '16px',
