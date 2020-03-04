@@ -5,15 +5,12 @@ import SEO from '../components/seo';
 
 import Slices from '../components/Slices';
 
-const IndexPage = ({ data }) => {
-  console.log(data.allPrismicServices);
-  return (
-    <>
-      <SEO title="Home" />
-      <Slices key={data.id} slices={data.prismicHomepage.data.body} />
-    </>
-  );
-};
+const IndexPage = ({ data }) => (
+  <>
+    <SEO title="Home" />
+    <Slices key={data.id} slices={data.prismicHomepage.data.body} />
+  </>
+);
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
@@ -115,22 +112,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-          }
-        }
-      }
-    }
-    prismicProjects {
-      data {
-        body {
-          primary {
-            label {
-              html
-            }
-          }
-        }
-        categories {
-          category {
-            slug
           }
         }
       }

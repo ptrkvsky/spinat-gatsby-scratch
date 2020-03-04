@@ -10,7 +10,7 @@ import {
 
 const SliceProjectDetail = ({ item, uid }) => (
   <Container>
-    <Link to={`/projet/${uid}`}>
+    <Link className="link" to={`/projet/${uid}`}>
       <BackgroundImage
         style={{
           minHeight: '450px',

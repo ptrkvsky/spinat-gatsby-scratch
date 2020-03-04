@@ -12,7 +12,6 @@ import theme from '../../styles/theme';
 const SliceHeroImage = ({ slice }) => (
   <div style={{ backgroundColor: theme.bg.opposite }}>
     <SectionHeroImage className="max-container">
-      {console.log(slice)}
       <Img
         className="illu"
         fluid={slice.primary.hero_image1.localFile.childImageSharp.fluid}

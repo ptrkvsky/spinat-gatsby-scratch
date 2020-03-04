@@ -15,7 +15,7 @@ const ButtonPrimary = css`
   border-color: ${theme.colors.primary};
   padding: 20px 40px 20px 40px;
   background: rgba(51, 51, 51, 0);
-  color: ${theme.colors.main};
+  color: ${theme.colors.opposite};
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   span {

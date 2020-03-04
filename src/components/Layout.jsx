@@ -42,11 +42,11 @@ const Layout = ({ children }) => {
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>
           {loading ? (
-            <div>test</div>
+            <div>Loading</div>
           ) : (
             <Transition location={myLocation}>{children}</Transition>
           )}
-          <footer>
+          <footer className="max-container">
             © {new Date().getFullYear()}, Built with
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>

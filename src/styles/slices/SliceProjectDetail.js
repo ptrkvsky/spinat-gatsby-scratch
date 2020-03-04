@@ -15,6 +15,9 @@ const Container = styled('div')`
   .bg-project-detail:hover {
     filter: none !important;
   }
+  .link {
+    display: block;
+  }
 `;
 
 const TitleCategory = styled('h3')`

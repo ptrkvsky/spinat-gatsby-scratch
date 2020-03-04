@@ -10,7 +10,7 @@ const SliceInfosIconsContainer = ({ slice }) => (
   <InfosIconsBg>
     <InfosIconsContainer className="max-container">
       {slice.items.map(item => (
-        <SliceInfosIconsDetail item={item} />
+        <SliceInfosIconsDetail key={item.icon} item={item} />
       ))}
     </InfosIconsContainer>
   </InfosIconsBg>

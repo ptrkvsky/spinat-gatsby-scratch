@@ -18,16 +18,16 @@ const Transition = ({ children, location }) => {
     entering: {
       position: 'absolute',
       opacity: 0,
-      transform: `translateY(0)`,
+      transform: `translateX(0)`,
     },
     entered: {
       transition: `all ${timeout}ms ease-in-out`,
-      transform: `translateY(0)`,
+      transform: `translateX(0)`,
     },
     exiting: {
       transition: `all ${timeout}ms ease-in-out`,
       opacity: 0,
-      transform: `translateY(70px)`,
+      transform: `translateX(-70px)`,
     },
   };
   const { pathname } = location;

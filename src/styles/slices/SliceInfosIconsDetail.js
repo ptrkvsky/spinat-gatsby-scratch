@@ -21,6 +21,7 @@ const InfosIconsDetailContainer = styled('article')`
     font-weight: 700;
     line-height: 1.4em;
     margin: 0px 0px 5px 0px;
+    color: ${theme.colors.opposite};
     &:after {
       content: '';
       display: block;
@@ -28,12 +29,13 @@ const InfosIconsDetailContainer = styled('article')`
       transform: translateY(10px);
       width: 50px;
       height: 3px;
-      background-color: ${theme.colors.main};
+      background-color: ${theme.colors.opposite};
     }
   }
   .bloc-shortdesc,
   svg {
     padding-left: 40px;
+    color: ${theme.colors.opposite};
   }
   &:last-child:after {
     content: '';
