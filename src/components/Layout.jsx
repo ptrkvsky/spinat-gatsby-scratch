@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Transition from '../lib/animations/Transition';
@@ -26,6 +26,14 @@ const Layout = ({ children }) => {
 
   const [loading, setLoading] = useState(true);
   const [myLocation, setLocation] = useState(true);
+  const [stateTransition, setTransition] = useState(false);
+
+  const defaultState = {
+    stateTransition,
+    setTransition,
+  };
+  const contextAnimation = createContext(defaultState);
+
   useEffect(() => {
     // avoid build error on netlify;
     setLocation(location);
@@ -44,7 +52,13 @@ const Layout = ({ children }) => {
           {loading ? (
             <div>Loading</div>
           ) : (
-            <Transition location={myLocation}>{children}</Transition>
+            <Transition
+              stateTransition={stateTransition}
+              setTransition={setTransition}
+              location={myLocation}
+            >
+              {children}
+            </Transition>
           )}
           <footer className="max-container">
             © {new Date().getFullYear()}, Built with
