@@ -12,6 +12,9 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-plugin-transition-link',
+    },
+    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {

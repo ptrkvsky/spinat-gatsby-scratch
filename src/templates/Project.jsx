@@ -2,17 +2,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import { motion } from 'framer-motion';
 import Breadcrumb from '../components/Breadcrumb';
 import { SectionHero, Grid, Main, Aside } from '../styles/pages/project';
 import { PrimaryTitle } from '../styles/titles/primaryTitle';
 
-const Project = ({ data }) => {
+const Project = ({ data, transitionStatus, entry, exit }) => {
   const categoriesList = data.prismicProjects.data.categories.map(item => (
     <p>{item.category.document[0].data.name}</p>
   ));
-  console.log(data.prismicProjects.data);
   return (
     <div className="project-page">
+      {console.log(exit, entry)}
       <BackgroundImage
         style={{
           backgroundSize: 'cover',
@@ -26,7 +27,13 @@ const Project = ({ data }) => {
         <SectionHero>
           <div className="max-container">
             <PrimaryTitle>
-              <h1 className="title">{data.prismicProjects.data.main_title}</h1>
+              <motion.div
+                animate={{ opacity: transitionStatus === 'entered' ? 1 : 0 }}
+              >
+                <h1 className="title">
+                  {data.prismicProjects.data.main_title}
+                </h1>
+              </motion.div>
             </PrimaryTitle>
             <Breadcrumb />
           </div>
@@ -53,6 +60,9 @@ const Project = ({ data }) => {
 
 Project.propTypes = {
   data: PropTypes.object.isRequired,
+  entry: PropTypes.object.isRequired,
+  exit: PropTypes.object.isRequired,
+  transitionStatus: PropTypes.string.isRequired,
 };
 
 export default Project;
