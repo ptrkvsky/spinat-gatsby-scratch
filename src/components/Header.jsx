@@ -19,13 +19,13 @@ const Header = ({ siteTitle }) => (
       <MainNav>
         <ul>
           <li>
-            <a href="/">Accueil</a>
+            <Link to="/">Accueil</Link>
           </li>
           <li>
             <a href="/">Services</a>
           </li>
           <li>
-            <a href="/">Projects</a>
+            <Link to="/projets/">Projets</Link>
           </li>
           <li>
             <a href="/">About</a>

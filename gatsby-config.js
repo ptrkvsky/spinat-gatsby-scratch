@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Spinat Default Starter`,
+    title: `Spinat`,
     description: `Best web agency EU`,
     author: `@kovskyD`,
   },

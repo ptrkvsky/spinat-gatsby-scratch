@@ -2,11 +2,6 @@ import styled from '@emotion/styled';
 import theme from '../theme';
 import mediaQueries from '../mediaQueries';
 
-const SectionHero = styled('section')`
-  min-height: 50vh;
-  background-color: ${theme.bg.oppositeTransparent};
-  padding-top: 17vh;
-`;
 
 const Grid = styled('section')`
   display: grid;
