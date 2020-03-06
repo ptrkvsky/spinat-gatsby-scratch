@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import { motion } from 'framer-motion';
@@ -11,12 +11,24 @@ const Project = ({ data, transitionStatus, entry, exit }) => {
   const categoriesList = data.prismicProjects.data.categories.map(item => (
     <p>{item.category.document[0].data.name}</p>
   ));
+  const variantsContainer = {
+    open: { opacity: 1 },
+    closed: { opacity: 0 },
+  };
+  const variantsTitle = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: '-100%' },
+  };
+
   return (
-    <div className="project-page">
-      {console.log(exit, entry)}
+    <motion.div
+      animate={transitionStatus === 'entered' ? 'open' : 'closed'}
+      variants={variantsContainer}
+      className="project-page"
+    >
       <BackgroundImage
         style={{
-          backgroundSize: 'cover',
+          backgroundSize: transitionStatus === 'entered' ? 'cover' : '0%',
         }}
         className="bg-project-detail"
         Tag="div"
@@ -25,17 +37,22 @@ const Project = ({ data, transitionStatus, entry, exit }) => {
         }
       >
         <SectionHero>
-          <div className="max-container">
-            <PrimaryTitle>
-              <motion.div
-                animate={{ opacity: transitionStatus === 'entered' ? 1 : 0 }}
-              >
+          <div className="max-container overflow-hidden">
+            <motion.div
+              animate={transitionStatus === 'entered' ? 'open' : 'closed'}
+              variants={variantsTitle}
+              transition={{
+                duration: 0.5,
+                ease: 'easeInOut',
+              }}
+            >
+              <PrimaryTitle>
                 <h1 className="title">
                   {data.prismicProjects.data.main_title}
                 </h1>
-              </motion.div>
-            </PrimaryTitle>
-            <Breadcrumb />
+              </PrimaryTitle>
+              <Breadcrumb />
+            </motion.div>
           </div>
         </SectionHero>
       </BackgroundImage>
@@ -54,7 +71,7 @@ const Project = ({ data, transitionStatus, entry, exit }) => {
           {categoriesList}
         </Aside>
       </Grid>
-    </div>
+    </motion.div>
   );
 };
 

@@ -7,7 +7,7 @@ import SliceServicesContainer from './slices/SliceServicesContainer';
 import SliceTitle from './slices/SliceTitle';
 import SliceProjects from './slices/SliceProjectsContainer';
 
-const Slices = ({ slices }) => {
+const Slices = ({ slices, transitionStatus }) => {
   const [isVisible, setVisible] = useState(true);
   return slices.map(slice => {
     switch (slice.__typename) {
@@ -18,6 +18,7 @@ const Slices = ({ slices }) => {
             setVisible={setVisible}
             key={slice.id}
             slice={slice}
+            transitionStatus={transitionStatus}
           />
         );
       case 'PrismicHomepageBodyBlocIcon':

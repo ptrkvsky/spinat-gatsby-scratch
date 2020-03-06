@@ -5,15 +5,22 @@ import SEO from '../components/seo';
 
 import Slices from '../components/Slices';
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, transitionStatus, entry, exit }) => (
   <>
     <SEO title="Home" />
-    <Slices key={data.id} slices={data.prismicHomepage.data.body} />
+    <Slices
+      transitionStatus={transitionStatus}
+      key={data.id}
+      slices={data.prismicHomepage.data.body}
+    />
   </>
 );
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
+  entry: PropTypes.object.isRequired,
+  exit: PropTypes.object.isRequired,
+  transitionStatus: PropTypes.string.isRequired,
 };
 
 export const pageQuery = graphql`
