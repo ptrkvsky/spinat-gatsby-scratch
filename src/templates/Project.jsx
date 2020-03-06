@@ -5,13 +5,11 @@ import BackgroundImage from 'gatsby-background-image';
 import { motion } from 'framer-motion';
 import Breadcrumb from '../components/Breadcrumb';
 import { SectionHero } from '../styles/hero/sectionHero';
-import { Grid, Main, Aside } from '../styles/pages/project/project';
+import { Grid, Main, AsideContainer } from '../styles/pages/project/project';
 import { PrimaryTitle } from '../styles/titles/primaryTitle';
+import Aside from '../components/projects/Aside';
 
 const Project = ({ data, transitionStatus, entry, exit }) => {
-  const categoriesList = data.prismicProjects.data.categories.map(item => (
-    <p>{item.category.document[0].data.name}</p>
-  ));
   const variantsTitle = {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: '-100%' },
@@ -56,7 +54,7 @@ const Project = ({ data, transitionStatus, entry, exit }) => {
       </BackgroundImage>
       <Grid className="max-container">
         <Main>
-          <p>{data.prismicProjects.data.client}</p>
+          <h2 className="title">Summary.</h2>
           <div
             className="long_description"
             dangerouslySetInnerHTML={{
@@ -64,10 +62,13 @@ const Project = ({ data, transitionStatus, entry, exit }) => {
             }}
           />
         </Main>
-        <Aside>
-          <p>{data.prismicProjects.data.date}</p>
-          {categoriesList}
-        </Aside>
+        <AsideContainer>
+          <Aside
+            date={data.prismicProjects.data.date}
+            categories={data.prismicProjects.data.categories}
+            client={data.prismicProjects.data.client}
+          />
+        </AsideContainer>
       </Grid>
     </div>
   );
@@ -88,7 +89,7 @@ export const pageQuery = graphql`
       data {
         main_title
         client
-        date
+        date(formatString: "DD MMMM YYYY", locale: "en-EN")
         website {
           url
         }

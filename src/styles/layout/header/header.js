@@ -3,12 +3,11 @@ import theme from '../../theme';
 import mediaQueries from '../../mediaQueries';
 
 const HeaderBg = styled('header')`
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 900;
-  background-color: rgba(0, 0, 0, 0.9);
 `;
 
 const HeaderContainer = styled('div')`
