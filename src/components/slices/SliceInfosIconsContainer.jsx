@@ -7,8 +7,20 @@ import {
   InfosIconsBg,
 } from '../../styles/slices/SliceInfosIconsContainer';
 
-const SliceInfosIconsContainer = ({ slice, isVisible, setVisible }) => (
-  <motion.div animate={{ opacity: isVisible ? 1 : 0 }}>
+const variants = {
+  open: { height: 'auto' },
+  closed: { height: 0, overflow: 'hidden' },
+};
+
+const SliceInfosIconsContainer = ({ slice, transitionStatus }) => (
+  <motion.div
+    animate={transitionStatus === 'entered' ? 'open' : 'closed'}
+    variants={variants}
+    transition={{
+      duration: 0.5,
+      ease: 'easeInOut',
+    }}
+  >
     <InfosIconsBg>
       <InfosIconsContainer className="max-container">
         {slice.items.map(item => (
@@ -20,9 +32,8 @@ const SliceInfosIconsContainer = ({ slice, isVisible, setVisible }) => (
 );
 
 SliceInfosIconsContainer.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
-  setVisible: PropTypes.func.isRequired,
   slice: PropTypes.object.isRequired,
+  transitionStatus: PropTypes.string.isRequired,
 };
 
 export default SliceInfosIconsContainer;

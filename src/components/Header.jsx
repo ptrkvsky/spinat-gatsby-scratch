@@ -1,13 +1,14 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import TransitionLink from 'gatsby-plugin-transition-link';
 import { HeaderContainer, HeaderBg } from '../styles/layout/header/header';
 import { MainNav } from '../styles/layout/header/mainNav';
 
 const Header = ({ siteTitle }) => (
   <HeaderBg>
     <HeaderContainer>
-      <Link
+      <TransitionLink
         to="/"
         style={{
           color: `white`,
@@ -15,7 +16,7 @@ const Header = ({ siteTitle }) => (
         }}
       >
         {siteTitle}
-      </Link>
+      </TransitionLink>
       <MainNav>
         <ul>
           <li>
