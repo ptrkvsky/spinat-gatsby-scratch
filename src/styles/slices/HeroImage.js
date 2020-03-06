@@ -6,6 +6,7 @@ const SectionHeroImage = styled('section')`
   position: relative;
   display: block;
   padding: 150px 0 120px 0;
+  min-height: 50vh;
   ${mediaQueries.tabletLandscape} {
     padding: 100px 10px 80px 10px;
   }

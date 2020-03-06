@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 
 import Slices from '../components/Slices';
 
-const IndexPage = ({ data, transitionStatus, entry, exit }) => (
+const IndexPage = ({ data, transitionStatus }) => (
   <>
     <SEO title="Home" />
     <Slices
@@ -18,8 +18,6 @@ const IndexPage = ({ data, transitionStatus, entry, exit }) => (
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
-  entry: PropTypes.object.isRequired,
-  exit: PropTypes.object.isRequired,
   transitionStatus: PropTypes.string.isRequired,
 };
 

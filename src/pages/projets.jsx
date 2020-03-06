@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { graphql } from 'gatsby';
+import { motion } from 'framer-motion';
 import SEO from '../components/seo';
 import { SectionHero } from '../styles/hero/sectionHero';
 import { PrimaryTitle } from '../styles/titles/primaryTitle';
 import { Grid } from '../styles/pages/project/listingProject';
 import Breadcrumb from '../components/Breadcrumb';
 
-const Projets = ({ data }) => (
+const Projets = ({ data, transitionStatus }) => (
   <>
     <SEO title="Projets - Spinat Agence Web" />
-
     <SectionHero>
       <div className="max-container">
         <PrimaryTitle>
@@ -34,6 +34,7 @@ const Projets = ({ data }) => (
 
 Projets.propTypes = {
   data: PropTypes.object.isRequired,
+  transitionStatus: PropTypes.string.isRequired,
 };
 
 export const pageQuery = graphql`

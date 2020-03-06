@@ -10,6 +10,14 @@ const Header = ({ siteTitle }) => (
     <HeaderContainer>
       <TransitionLink
         to="/"
+        exit={{
+          delay: 0,
+          length: 0.5,
+        }}
+        entry={{
+          delay: 0.5,
+          length: 0,
+        }}
         style={{
           color: `white`,
           textDecoration: `none`,

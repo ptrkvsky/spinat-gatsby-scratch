@@ -8,8 +8,8 @@ import {
 } from '../../styles/slices/SliceInfosIconsContainer';
 
 const variants = {
-  open: { height: 'auto' },
-  closed: { height: 0, overflow: 'hidden' },
+  open: { opacity: 1 },
+  closed: { opacity: 0 },
 };
 
 const SliceInfosIconsContainer = ({ slice, transitionStatus }) => (
