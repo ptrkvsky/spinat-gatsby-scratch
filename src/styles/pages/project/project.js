@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
-import theme from '../theme';
-import mediaQueries from '../mediaQueries';
-
+import mediaQueries from '../../mediaQueries';
 
 const Grid = styled('section')`
   display: grid;
@@ -28,8 +26,9 @@ const Main = styled('main')`
     }
   }
 `;
+
 const Aside = styled('aside')`
   grid-area: aside;
 `;
 
-export { SectionHero, Grid, Aside, Main };
+export { Grid, Aside, Main };

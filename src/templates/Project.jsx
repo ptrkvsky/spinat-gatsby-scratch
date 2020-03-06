@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import { motion } from 'framer-motion';
 import Breadcrumb from '../components/Breadcrumb';
-import { SectionHero, Grid, Main, Aside } from '../styles/pages/project';
+import { SectionHero } from '../styles/hero/sectionHero';
+import { Grid, Main, Aside } from '../styles/pages/project/project';
 import { PrimaryTitle } from '../styles/titles/primaryTitle';
 
 const Project = ({ data, transitionStatus, entry, exit }) => {
