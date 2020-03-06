@@ -1,21 +1,34 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import { motion } from 'framer-motion';
 import Breadcrumb from '../components/Breadcrumb';
 import { SectionHero, Grid, Main, Aside } from '../styles/pages/project';
 import { PrimaryTitle } from '../styles/titles/primaryTitle';
 
-const Project = ({ data }) => {
+const Project = ({ data, transitionStatus, entry, exit }) => {
   const categoriesList = data.prismicProjects.data.categories.map(item => (
     <p>{item.category.document[0].data.name}</p>
   ));
-  console.log(data.prismicProjects.data);
+  const variantsContainer = {
+    open: { opacity: 1 },
+    closed: { opacity: 0 },
+  };
+  const variantsTitle = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: '-100%' },
+  };
+
   return (
-    <div className="project-page">
+    <motion.div
+      animate={transitionStatus === 'entered' ? 'open' : 'closed'}
+      variants={variantsContainer}
+      className="project-page"
+    >
       <BackgroundImage
         style={{
-          backgroundSize: 'cover',
+          backgroundSize: transitionStatus === 'entered' ? 'cover' : '0%',
         }}
         className="bg-project-detail"
         Tag="div"
@@ -24,11 +37,22 @@ const Project = ({ data }) => {
         }
       >
         <SectionHero>
-          <div className="max-container">
-            <PrimaryTitle>
-              <h1 className="title">{data.prismicProjects.data.main_title}</h1>
-            </PrimaryTitle>
-            <Breadcrumb />
+          <div className="max-container overflow-hidden">
+            <motion.div
+              animate={transitionStatus === 'entered' ? 'open' : 'closed'}
+              variants={variantsTitle}
+              transition={{
+                duration: 0.5,
+                ease: 'easeInOut',
+              }}
+            >
+              <PrimaryTitle>
+                <h1 className="title">
+                  {data.prismicProjects.data.main_title}
+                </h1>
+              </PrimaryTitle>
+              <Breadcrumb />
+            </motion.div>
           </div>
         </SectionHero>
       </BackgroundImage>
@@ -47,12 +71,15 @@ const Project = ({ data }) => {
           {categoriesList}
         </Aside>
       </Grid>
-    </div>
+    </motion.div>
   );
 };
 
 Project.propTypes = {
   data: PropTypes.object.isRequired,
+  entry: PropTypes.object.isRequired,
+  exit: PropTypes.object.isRequired,
+  transitionStatus: PropTypes.string.isRequired,
 };
 
 export default Project;

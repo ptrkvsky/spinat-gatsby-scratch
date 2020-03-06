@@ -40,12 +40,19 @@ const Layout = ({ children }) => {
         className={loading ? 'main-container loading' : 'main-container loaded'}
       >
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main>
+        {/* <main>
           {loading ? (
             <div>Loading</div>
           ) : (
             <Transition location={myLocation}>{children}</Transition>
           )}
+          <footer className="max-container">
+            © {new Date().getFullYear()}, Built with
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </footer>
+        </main> */}
+        <main>
+          {children}
           <footer className="max-container">
             © {new Date().getFullYear()}, Built with
             <a href="https://www.gatsbyjs.org">Gatsby</a>

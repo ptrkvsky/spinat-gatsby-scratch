@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 
 import SliceHeroImage from './slices/SliceHeroImage';
 import SliceInfosIconsContainer from './slices/SliceInfosIconsContainer';
@@ -7,13 +7,29 @@ import SliceServicesContainer from './slices/SliceServicesContainer';
 import SliceTitle from './slices/SliceTitle';
 import SliceProjects from './slices/SliceProjectsContainer';
 
-const Slices = ({ slices }) =>
-  slices.map(slice => {
+const Slices = ({ slices, transitionStatus }) => {
+  const [isVisible, setVisible] = useState(true);
+  return slices.map(slice => {
     switch (slice.__typename) {
       case 'PrismicHomepageBodyHeroImage':
-        return <SliceHeroImage key={slice.id} slice={slice} />;
+        return (
+          <SliceHeroImage
+            isVisible={isVisible}
+            setVisible={setVisible}
+            key={slice.id}
+            slice={slice}
+            transitionStatus={transitionStatus}
+          />
+        );
       case 'PrismicHomepageBodyBlocIcon':
-        return <SliceInfosIconsContainer key={slice.id} slice={slice} />;
+        return (
+          <SliceInfosIconsContainer
+            isVisible={isVisible}
+            setVisible={setVisible}
+            key={slice.id}
+            slice={slice}
+          />
+        );
       case 'PrismicHomepageBodyServices':
         return <SliceServicesContainer key={slice.id} slice={slice} />;
       case 'PrismicHomepageBodyTitle':
@@ -24,6 +40,7 @@ const Slices = ({ slices }) =>
         return true;
     }
   });
+};
 
 Slices.propTypes = {
   slices: PropTypes.array.isRequired,

@@ -213,6 +213,10 @@ export default function GlobalStyle() {
           }
         }
 
+        .overflow-hidden {
+          overflow: hidden;
+        }
+
         .bg-opposite {
           background-color: ${theme.bg.opposite};
         }
