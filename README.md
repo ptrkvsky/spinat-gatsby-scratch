@@ -4,7 +4,8 @@
   Spinat Website
 </h1>
 
-Rebuilding the [Spinat Agence Web Cannes] (https://spinat.fr/) with prismic and gatsby
+Rebuilding Spinat  
+[Agence web Cannes](https://www.spinat.fr "Spinat Agence web Cannes")
 
 ## 🚀 Quick start
 
